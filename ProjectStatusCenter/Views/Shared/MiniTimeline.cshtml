@@ -1,0 +1,415 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .outerMost2 {
+        height: 100px;
+        overflow-x: hidden;
+        position: relative;
+        overflow-y: hidden;
+        margin: 10px 0px 10px 0px;
+    }
+    .zoomer {
+        height: 100%;
+        width: 100px;
+        position: absolute;
+        top: 0px;
+        left: 270px;
+        background-color: rgba(33, 33, 54, .2);
+        z-index: 222;
+        border: 5px solid gray;
+    }
+</style>
+
+@model ProjectStatusCenter.Models.TrackerProjectList
+
+
+<div class="outerMost2">
+    <div class="zoomer"></div>
+    <div class="cal2">
+        <div class="year-label">2017</div>
+        <div class="year-label">2018</div>
+        <div class="year-label">2019</div>
+
+        <div class="year-span">
+            <div class="col-mv-1">
+                January
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                February
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                March
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                April
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                May
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                June
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                July
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                August
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                September
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                October
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                November
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                December
+                <div class="month-line"></div>
+            </div>
+        </div>
+
+        <div class="year-span">
+            <div class="col-mv-1">
+                January
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                February
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                March
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                April
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                May
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                June
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                July
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                August
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                September
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                October
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                November
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                December
+                <div class="month-line"></div>
+            </div>
+        </div>
+
+        <div class="year-span">
+            <div class="col-mv-1">
+                January
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                February
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                March
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                April
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                May
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                June
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                July
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                August
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                September
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                October
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                November
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                December
+                <div class="month-line"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.js"></script>
+
+
+<script type="text/x-handlebars-template" class="template year-label-template2">
+    <div id="yearLabelTemplate2">
+        <div class="year-label">{{year}}</div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" class="template year-span-template2">
+    <div id="yearTemplate2">
+        <div class="year-span" year="{{year}}">
+            <div class="col-mv-1">
+                January
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                February
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                March
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                April
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                May
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                June
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                July
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                August
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                September
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                October
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                November
+                <div class="month-line"></div>
+            </div>
+            <div class="col-mv-1">
+                December
+                <div class="month-line"></div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" class="template project-item-template2">
+    <div id="projectItemTemplate2">
+        <div class="timeline accordion" id="accordion{{index}}">
+            <div class="card">
+                <div class="card-header" id="heading{{index}}">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{index}}" aria-expanded="true" aria-controls="collapse{{index}}">
+                            {{project}}
+                        </button>
+                    </h5>
+                    <span class="month-span">
+                        {{dateRange}}
+                    </span>
+                </div>
+
+                <div class="collapse" aria-labelledby="heading{{index}}" data-parent="#accordion1">
+                    <div class="card-body">
+                        Developer: {{dev}} <br />
+                        Description: {{{cardBody}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        filterDates2();
+    })
+
+    var dragZoomer = $('.zoomer');
+
+    dragZoomer.on('mousedown', function (e) {
+        var dr = $(this).addClass("drag").css("cursor", "move");
+        height = dr.outerHeight();
+        width = dr.outerWidth();
+        max_left = dr.parent().offset().left + dr.parent().width() - dr.width();
+        min_left = dr.parent().offset().left;
+
+        ypos = dr.offset().top + height - e.pageY,
+            xpos = dr.offset().left + width - e.pageX;
+        $(document.body).on('mousemove', function (e) {
+            var ileft = e.pageX + xpos - width;
+
+            if (dr.hasClass("drag")) {
+                if (ileft <= min_left) { ileft = min_left; }
+                if (ileft >= max_left) { ileft = max_left; }
+                dr.offset({ left: ileft });
+            }
+        }).on('mouseup', function (e) {
+            dr.removeClass("drag");
+            $('.outerMost').scrollLeft(dr.offset().left * 2.869);
+        });
+    });
+
+
+    function filterDates2() {
+        // clear all
+        var $calendar = $('.cal2');
+        var startYear = $('#SelectedStartYear').val();
+        var endYear = $('#SelectedEndYear').val();
+        $calendar.html('');
+        var colorsArray = ['#2196f3', '#800080', '#ff0000', '#dc5924', '#366886', '#3e4d07'];
+
+
+        // for each year, compile the year-label-template(s) and append
+        var count = 0;
+        for (var i = startYear; i <= endYear; i++) {
+            var template = Handlebars.compile($('.year-label-template2')[0].innerHTML);
+            $calendar.append($(template({ year: i })).html());
+            count++;
+        }
+        var width = (79.75 * count) + (count * .1875);
+        $calendar.css('width', width + 'rem');
+
+        // for each year, compile the year-span-template(s) and append
+        for (var i = startYear; i <= endYear; i++) {
+            var template = Handlebars.compile($('.year-span-template2')[0].innerHTML);
+            $calendar.append($(template({ year: i })).html());
+        }
+
+        // for each data item, compile the accordion template and append
+        var projectData = getProjectJson2();
+        var colorCount = 0;
+        for (var i = 0; i < projectData.length; i++) {
+            var prj = projectData[i];
+            var projectStartDate = prj.BusinessBeginString;
+            var projectEndDate = prj.BusinessEndString;
+            var template = Handlebars.compile($('.project-item-template2')[0].innerHTML);
+            var pos = getPositionFromDateString2(projectStartDate, projectEndDate);
+            if (pos.leftPos > -1) {
+                var tp = 60 * (i + 1);
+                console.log('colorCount=' + colorCount + " " + colorsArray[colorCount]);
+                $calendar.append($(template({ project: prj.Application, dateRange: projectStartDate + "-" + projectEndDate, index: (i + 1), cardBody: prj.Description, dev: prj.Developer })).html());
+                $calendar.find('#accordion' + (i + 1)).css({ 'position': 'absolute', 'top': tp + 'px', 'left': pos.leftPos + 'px', 'width': pos.width });
+                $calendar.find('#accordion' + (i + 1)).find('.card-header').css({ 'background-color': colorsArray[colorCount] });
+            }
+            if (colorCount < 5) {
+                colorCount++;
+            } else {
+                colorCount = 0;
+            }
+        }
+
+        $('.cal2').css({'transform': 'scale(.2)'});
+        $('.cal2').css({ 'position': 'absolute', 'top': '-660px', 'left': '-1520px' });
+        $('.outerMost2').css({ 'width': $('.cal2').width() * (.2) });   
+    }
+
+    function getProjectJson2() {
+        var projects = @Html.Raw(Json.Encode(Model.tBLs));
+        return projects;
+    }
+
+    function getPositionFromDateString2( startDateString, endDateString ) {
+
+        var sdt = new Date(startDateString);
+        var edt = new Date(endDateString);
+        var syr = sdt.getFullYear();
+        var eyr = edt.getFullYear();
+        var smn = sdt.getMonth();
+        var emn = edt.getMonth();
+        var sdy = sdt.getDate();
+        var edy = edt.getDate();
+        var position = { leftPos: -1, width: -1 };
+        var syearElement = $('.cal2 .year-span[year="' + syr + '"]');
+        var eyearElement = $('.cal2 .year-span[year="' + eyr + '"]');
+
+        var mWidth = $('.col-mv-1:nth-child(2)').position().left - $('.col-mv-1:nth-child(1)').position().left;
+        var oneDay = mWidth / 30;
+
+        if (syearElement.length > 0 && eyearElement.length > 0) {
+            var yearPos = syearElement.position().left; // 1st day of first month of year
+
+            // find month for start year
+            var month = syearElement.find('.col-mv-1:nth-child(' + (smn + 1) + ')');
+
+            //var leftPos = yearPos + (6.25 * mn); // 0, 6.25, 12.50, 18.75, ....
+            var leftPos = month.position().left + yearPos;
+
+            leftPos = leftPos + (oneDay * (sdy-1)); // leftPos of month + (oneDay * numberOfDays) (sdy)
+
+            // find month for end year
+            month = eyearElement.find('.col-mv-1:nth-child(' + (emn + 1) + ')');
+            yearPos = eyearElement.position().left + (oneDay * (edy - 1));
+
+            var rightPos = month.position().left + yearPos;
+
+            var width = rightPos - leftPos;
+            position.leftPos = leftPos;
+            position.width = width;
+        }
+        return position;
+
+
+    }
+</script>
+
