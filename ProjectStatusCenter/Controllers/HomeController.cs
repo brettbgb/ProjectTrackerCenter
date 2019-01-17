@@ -10,6 +10,49 @@ namespace ProjectStatusCenter.Controllers
     public class HomeController : Controller
     {
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Index2()
+        {
+            DateTime current = DateTime.Now;
+            TrackerProjectList model = new TrackerProjectList();
+            model.SelectedStartYear = current.Year - 1;
+            model.SelectedEndYear = current.Year + 1;
+
+            using (var db = new TrackerDBContext())
+            {
+                // Display all Tracker projects from the database
+                var query = from b in db.TBLs
+                            select b;
+
+                System.Diagnostics.Debug.WriteLine("All Tracker projects in the database:");
+                model.tBLs = new List<TBL>();
+
+                foreach (var item in query)
+                {
+                    System.Diagnostics.Debug.WriteLine(item.Application + ":" + item.Description);
+
+                    var mod = new TBL();
+                    mod.Application = item.Application;
+                    mod.Description = item.Description;
+                    mod.BusinessBeginString = ((DateTime)item.BusinessBeginCycle).ToShortDateString();
+                    mod.BusinessEndString = ((DateTime)item.BusinessEndCycle).ToShortDateString();
+                    mod.BusinessContact = item.BusinessContact;
+                    mod.DevBeginCycle = item.DevBeginCycle;
+                    mod.DevEndCycle = item.DevEndCycle;
+                    mod.Developer = item.Developer;
+
+                    model.tBLs.Add(mod);
+                }
+            }
+
+            return View(model);
+        }
+
+
         public ActionResult Index3()
         {
             DateTime current = DateTime.Now;
@@ -70,40 +113,6 @@ namespace ProjectStatusCenter.Controllers
             return View(model);
         }
 
-        //[HttpGet]
-        //public ActionResult TrackerProjects() 
-        //{
-        //    TrackerProjectList model = new TrackerProjectList();
-
-        //    using (var db = new TrackerDBContext())
-        //    {
-
-        //        // Display all Tracker projects from the database
-        //        var query = from b in db.TBLs
-        //                    select b;
-
-        //        System.Diagnostics.Debug.WriteLine("All Tracker projects in the database:");
-        //        model.tBLs = new List<TBL>();
-
-        //        foreach (var item in query)
-        //        {
-        //            System.Diagnostics.Debug.WriteLine(item.Application + ":" + item.Description);
-
-        //            var mod = new TBL();
-        //            mod.Application = item.Application;
-        //            mod.Description = item.Description;
-        //            mod.BusinessBeginCycle = item.BusinessBeginCycle;
-        //            mod.BusinessEndCycle = item.BusinessEndCycle;
-        //            mod.BusinessContact = item.BusinessContact;
-        //            mod.DevBeginCycle = item.DevBeginCycle;
-        //            mod.DevEndCycle = item.DevEndCycle;
-        //            mod.Developer = item.Developer;
-
-        //            model.tBLs.Add(mod);
-        //        }
-        //    }
-        //    return Json(model);
-        //}
 
         public ActionResult Index4() 
         {

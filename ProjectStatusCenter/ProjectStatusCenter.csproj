@@ -156,6 +156,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\columns.png" />
     <Content Include="Content\images\green-triangle.png" />
     <Content Include="Content\images\red-triangle.jpg" />
     <Content Include="Content\images\UWMedicine_SchoolofMedLogo_RGB_60transp.png" />
@@ -198,6 +199,8 @@
     <Content Include="Views\Home\Index3.cshtml" />
     <Content Include="Views\Home\Index4.cshtml" />
     <Content Include="Views\Shared\MiniTimeline.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
